@@ -1,7 +1,7 @@
 pipeline {
 
     agent {
-        label 'group1'
+        label 'my-ssh-agent-1'
     }
 
     tools {
