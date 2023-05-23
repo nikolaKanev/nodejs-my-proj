@@ -1,14 +1,21 @@
 pipeline {
 
     agent {
-        label 'my-ssh-agent-1'
+        label '<your_label>'
     }
 
     tools {
-        nodejs 'NodeJS'
+        nodejs 'nodejs'
     }
 
     stages {
+
+        stage('Clean') {
+            steps {
+                cleanWs()
+            }
+        }
+
         stage('Clone Repo') {
             steps {
                 git branch: 'main', url: 'https://github.com/stoenpav/nodejs-my-proj.git'
@@ -30,11 +37,5 @@ pipeline {
                 sh 'forever start src/index.js'
            }
         }
-    }
-
-    post {
-      always {
-         cleanWs()
-      }
     }
 }
