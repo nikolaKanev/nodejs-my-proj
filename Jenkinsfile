@@ -14,7 +14,7 @@ pipeline {
     }
 
     environment {
-      DOCKERHUB_CREDENTIALS = credentials('my_dockerhub_creds')
+      DOCKERHUB_CREDENTIALS = credentials('nikolakan')
       IMAGE_NAME = 'nikolakan/mynodejsapp'
     }
 
