@@ -1,11 +1,11 @@
 pipeline {
 
     agent {
-        label '<your_label>'
+        label 'my-ssh-agent-1'
     }
 
     tools {
-        nodejs 'nodejs'
+        nodejs 'NodeJS'
     }
 
     stages {
